@@ -144,9 +144,9 @@
         <div class="row">
             <div class="form-container">
 
-                <form action="">
-                    <input type="text" placeholder="Nombre">
-                    <input type="email" placeholder="Correo">
+                <form action="" name="formulario">
+                    <input type="text" placeholder="Nombre" name="nombre" id="nombre">
+                    <input type="email" placeholder="Correo" id="correo" oninput="validarCorreo">
                     <input type="number" placeholder="Telefono">
                     <textarea cols="15" rows="5" placeholder="Mensaje"></textarea >
                     <input type="submit" value="Enviar">        
@@ -170,9 +170,25 @@
     </section>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
 
     <script>
+       
+ function validarCorreo() {
+            var emailInput = document.getElementById("email");
+            var email = emailInput.value;
+            var mensaje = document.getElementById("mensaje");
+           
+
+             Expresión regular para verificar la dirección de correo electrónico
+            var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+            if (regex.test(email)) {
+                mensaje.textContent = "";
+            } else {
+                mensaje.textContent = "Correo electrónico no válido";
+            }
+        }
 
         $(document).ready(function() {
 
