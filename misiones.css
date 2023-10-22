@@ -30,3 +30,18 @@ button {
     color:  #060606;
     border: .2rem solid #f9580e;
 }
+html {
+    margin: 20px;
+    text-align: justify;
+}
+
+h1 {
+    font-size: larger;
+    text-align: center;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
